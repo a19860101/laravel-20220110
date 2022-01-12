@@ -20,10 +20,35 @@ class PostController extends Controller
         return view('post.create');
     }
     function store(Request $request){
-        $post = new Post;
-        $post->title = $request->title;
-        $post->content = $request->content;
-        $post->save();
+        // 方法一
+        // $post = new Post;
+        // $post->title = $request->title;
+        // $post->content = $request->content;
+        // $post->save();
+
+        // 方法二 (最不推薦)
+        // $post = new Post;
+        // $post->fill([
+        //     'title' => $request->title,
+        //     'content' => $request->content
+        // ]);
+        // $post->save();
+
+        // 方法三
+        // $post = new Post;
+        // $post->fill($request->all());
+        // $post->save();
+
+        // 方法四
+
+        // Post::create($request->all());
+
+        // 方法五
+
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content
+        ]);
 
         // return redirect()->route('post.index');
         return Redirect::route('post.index');
