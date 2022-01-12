@@ -42,7 +42,8 @@ class PostController extends Controller
         return redirect('post');
     }
     function edit($id){
-        return $id;
+        $post = DB::table('posts')->find($id);
+        return view('post.edit',compact('post'));
     }
     function destroy($id){
         // DB::delete('DELETE FROM posts WHERE id = ?',[$id]);
