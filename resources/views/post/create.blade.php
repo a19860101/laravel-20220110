@@ -1,5 +1,7 @@
 @extends('template.master')
-
+@section('page-title')
+建立文章
+@endsection
 @section('main')
 <div class="container">
     <div class="row">

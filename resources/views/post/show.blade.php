@@ -1,5 +1,7 @@
 @extends('template.master')
-
+@section('page-title')
+{{$post->title}}
+@endsection
 @section('main')
 <div class="container">
     <div class="row">
