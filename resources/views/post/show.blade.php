@@ -23,7 +23,7 @@
                     最後更新時間{{$post->updated_at}}
                 </div>
                 <hr>
-                <form action="" method="post">
+                <form action="/post/{{$post->id}}" method="post">
                     @csrf
                     @method('delete')
                     <input type="submit" class="btn btn-danger" value="刪除">

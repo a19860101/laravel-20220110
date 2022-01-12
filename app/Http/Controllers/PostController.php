@@ -39,4 +39,7 @@ class PostController extends Controller
             'updated_at'=>now()
         ]);
     }
+    function destroy($id){
+        return $id;
+    }
 }
