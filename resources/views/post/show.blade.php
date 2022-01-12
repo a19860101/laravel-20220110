@@ -23,7 +23,8 @@
                     最後更新時間{{$post->updated_at}}
                 </div>
                 <hr>
-                <form action="/post/{{$post->id}}" method="post">
+                <a href="/post/{{$post->id}}/edit" class="btn btn-primary">編輯文章</a>
+                <form action="/post/{{$post->id}}" method="post" class="d-inline-block">
                     @csrf
                     @method('delete')
                     <input type="submit" class="btn btn-danger" value="刪除" onclick="return confirm('確認刪除？')">
