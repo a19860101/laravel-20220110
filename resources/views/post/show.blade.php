@@ -24,7 +24,7 @@
                 </div>
                 <hr>
                 <a href="{{route('post.edit',['post' => $post->id])}}" class="btn btn-primary">編輯文章</a>
-                <form action="{{route('post.destroy',['id' => $post->id])}}" method="post" class="d-inline-block">
+                <form action="{{route('post.destroy',['post' => $post->id])}}" method="post" class="d-inline-block">
                     @csrf
                     @method('delete')
                     <input type="submit" class="btn btn-danger" value="刪除" onclick="return confirm('確認刪除？')">
