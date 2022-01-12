@@ -23,7 +23,7 @@
                     最後更新時間{{$post->updated_at}}
                 </div>
                 <hr>
-                <a href="{{route('post.edit',['id' => $post->id])}}" class="btn btn-primary">編輯文章</a>
+                <a href="{{route('post.edit',['post' => $post->id])}}" class="btn btn-primary">編輯文章</a>
                 <form action="{{route('post.destroy',['id' => $post->id])}}" method="post" class="d-inline-block">
                     @csrf
                     @method('delete')

@@ -53,11 +53,14 @@ class PostController extends Controller
         // return redirect()->route('post.index');
         return Redirect::route('post.index');
     }
-    function show($id){
+    function show(Post $post){
         // $post = Post::where('id',$id)->first();
         // $post = Post::find($id);
-        $post = Post::findOrFail($id);
+        // $post = Post::findOrFail($id);
 
         return view('post.show',compact('post'));
+    }
+    function edit(Post $post){
+        return view('post.edit',compact('post'));
     }
 }

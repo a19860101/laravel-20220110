@@ -26,7 +26,7 @@
                 <div>
                     最後更新時間{{$post->updated_at}}
                 </div>
-                <a href="{{route('post.show',['id' => $post->id])}}" class="btn btn-primary">繼續閱讀</a>
+                <a href="{{route('post.show',['post' => $post->id])}}" class="btn btn-primary">繼續閱讀</a>
                 <hr>
             </div>
             @endforeach
