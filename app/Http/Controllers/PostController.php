@@ -38,8 +38,12 @@ class PostController extends Controller
             'created_at'=>now(),
             'updated_at'=>now()
         ]);
+
+        return redirect('post');
     }
     function destroy($id){
-        return $id;
+        // DB::delete('DELETE FROM posts WHERE id = ?',[$id]);
+        DB::table('posts')->where('id',$id)->delete();
+        return redirect('post');
     }
 }

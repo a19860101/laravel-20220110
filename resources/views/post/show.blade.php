@@ -26,7 +26,7 @@
                 <form action="/post/{{$post->id}}" method="post">
                     @csrf
                     @method('delete')
-                    <input type="submit" class="btn btn-danger" value="刪除">
+                    <input type="submit" class="btn btn-danger" value="刪除" onclick="return confirm('確認刪除？')">
                 </form>
                 <a href="/post" class="btn btn-success">文章列表</a>
             </div>
