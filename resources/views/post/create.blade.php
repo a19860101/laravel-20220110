@@ -14,7 +14,7 @@
                 <h2>建立文章</h2>
             </div>
             <div class="col-8">
-                <form action="/post" method="post">
+                <form action="{{route('post.store')}}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="">標題</label>

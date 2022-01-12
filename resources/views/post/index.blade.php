@@ -9,6 +9,9 @@
 
 </head>
 <body>
+    <nav>
+        <a href="{{route('post.create')}}">建立文章</a>
+    </nav>
     <div class="container">
         <div class="row">
             @foreach($posts as $post)
@@ -23,7 +26,7 @@
                 <div>
                     最後更新時間{{$post->updated_at}}
                 </div>
-                <a href="/post/{{$post->id}}" class="btn btn-primary">繼續閱讀</a>
+                <a href="{{route('post.show',['id' => $post->id])}}" class="btn btn-primary">繼續閱讀</a>
                 <hr>
             </div>
             @endforeach
