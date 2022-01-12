@@ -26,7 +26,7 @@ Route::get('/post/create','PostController@create')->name('post.create');
 Route::post('/post','PostController@store')->name('post.store');
 Route::get('/post/{post}','PostController@show')->name('post.show');
 Route::get('/post/{post}/edit' ,'PostController@edit')->name('post.edit');
-Route::put('/post/{id}','PostController@update')->name('post.update');
+Route::put('/post/{post}','PostController@update')->name('post.update');
 Route::delete('/post/{id}','PostController@destroy')->name('post.destroy');
 //delete,put/patch
 

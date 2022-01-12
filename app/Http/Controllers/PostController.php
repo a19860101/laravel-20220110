@@ -63,4 +63,14 @@ class PostController extends Controller
     function edit(Post $post){
         return view('post.edit',compact('post'));
     }
+    function update(Request $request, Post $post){
+        // $post->fill($request->all());
+        // $post->save();
+
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->save();
+
+        return Redirect::route('post.show',['post' => $post->id]);
+    }
 }
