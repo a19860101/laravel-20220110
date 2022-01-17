@@ -30,3 +30,5 @@ Route::put('/post/{post}','PostController@update')->name('post.update');
 Route::delete('/post/{post}','PostController@destroy')->name('post.destroy');
 //delete,put/patch
 
+Route::patch('post/{post}','PostController@removeCover')->name('post.removeCover');
+

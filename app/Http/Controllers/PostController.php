@@ -101,4 +101,10 @@ class PostController extends Controller
         return Redirect::route('post.index');
 
     }
+    public function removeCover(Request $request,Post $post){
+        $post->cover = null;
+        $post->save();
+
+        return redirect()->back();
+    }
 }

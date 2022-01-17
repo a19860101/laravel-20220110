@@ -22,6 +22,11 @@
                     <input type="file" name="cover">
                     @else
                     <img src="{{asset('images/'.$post->cover)}}" width="200">
+                    <form action="{{route('post.removeCover',['post'=>$post->id])}}" method="post">
+                        @csrf
+                        @method('patch')
+                        <input type="submit" value="刪除圖片" class="btn btn-danger">
+                    </form>
                     @endif
                 </div>
                 <div class="mb-3">
