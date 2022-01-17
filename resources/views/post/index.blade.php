@@ -7,6 +7,13 @@
         <div class="col-8">
             <h3>{{$post->title}}</h3>
             <div>
+                @if($post->cover == null)
+                <img src="{{asset('images/no-image.png')}}" class='w-100'>
+                @else
+                <img src="{{asset('images/'.$post->cover)}}" class='w-100'>
+                @endif
+            </div>
+            <div>
                 {!!Str::limit(strip_tags($post->content),200)!!}
             </div>
             <a href="{{route('post.show',['post' => $post->id])}}" class="btn btn-primary">繼續閱讀</a>
