@@ -18,10 +18,14 @@
             </div>
             <a href="{{route('post.show',['post' => $post->id])}}" class="btn btn-primary">繼續閱讀</a>
             <div>
-                建立時間{{$post->created_at}}
+                @php
+                Carbon\Carbon::setLocale('zh_TW');
+                @endphp
+                {{-- 建立時間{{$post->created_at}} --}}
+                建立時間 {{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}
             </div>
             <div>
-                最後更新時間{{$post->updated_at}}
+                最後更新時間 {{Carbon\Carbon::parse($post->updated_at)->diffForHumans()}}
             </div>
             <hr>
         </div>
