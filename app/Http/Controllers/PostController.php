@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use DB;
 use Redirect;
+use Str;
 use App\Post;
 
 class PostController extends Controller
@@ -20,6 +21,12 @@ class PostController extends Controller
         return view('post.create');
     }
     function store(Request $request){
+
+        // return $request->file('cover')->store('test');
+        // return $request->file('cover')->store('test','public');
+        $cover = Str::uuid().'.jpg';
+        return $request->file('cover')->storeAs('test',$cover,'public');
+
         // 方法一
         // $post = new Post;
         // $post->title = $request->title;

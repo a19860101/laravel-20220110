@@ -9,11 +9,15 @@
             <h2>建立文章</h2>
         </div>
         <div class="col-8">
-            <form action="{{route('post.store')}}" method="post">
+            <form action="{{route('post.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="">標題</label>
                     <input type="text" name="title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">封面圖片</label>
+                    <input type="file" name="cover">
                 </div>
                 <div class="mb-3">
                     <label for="">文章內容</label>
