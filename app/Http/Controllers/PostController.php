@@ -24,7 +24,8 @@ class PostController extends Controller
 
         // return $request->file('cover')->store('test');
         // return $request->file('cover')->store('test','public');
-        $cover = Str::uuid().'.jpg';
+        $ext = $request->file('cover')->getClientOriginalExtension();
+        $cover = Str::uuid().'.'.$ext;
         return $request->file('cover')->storeAs('test',$cover,'public');
 
         // 方法一
