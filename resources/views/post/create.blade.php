@@ -26,3 +26,6 @@
     </div>
 </div>
 @endsection
+@section('js')
+@include('template.tinymce')
+@endsection
