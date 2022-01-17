@@ -17,6 +17,14 @@
                     <input type="text" name="title" class="form-control" value="{{$post->title}}">
                 </div>
                 <div class="mb-3">
+                    @if($post->cover == null)
+                    <label for="">封面圖片</label>
+                    <input type="file" name="cover">
+                    @else
+                    <img src="{{asset('images/'.$post->cover)}}" width="200">
+                    @endif
+                </div>
+                <div class="mb-3">
                     <label for="">文章內容</label>
                     <textarea name="content" id="content" cols="30" rows="10" class="form-control">{{$post->content}}</textarea>
                 </div>
