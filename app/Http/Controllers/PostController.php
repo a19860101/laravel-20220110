@@ -22,11 +22,17 @@ class PostController extends Controller
     }
     function store(Request $request){
 
+        // 封面上傳
         // return $request->file('cover')->store('test');
         // return $request->file('cover')->store('test','public');
-        $ext = $request->file('cover')->getClientOriginalExtension();
-        $cover = Str::uuid().'.'.$ext;
-        return $request->file('cover')->storeAs('test',$cover,'public');
+        if($request->file('cover')){
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            $cover = Str::uuid().'.'.$ext;
+            $request->file('cover')->storeAs('images',$cover,'public');
+        }else{
+            $cover = null;
+        }
+
 
         // 方法一
         // $post = new Post;
@@ -55,7 +61,8 @@ class PostController extends Controller
 
         Post::create([
             'title' => $request->title,
-            'content' => $request->content
+            'content' => $request->content,
+            'cover' => $cover
         ]);
 
         // return redirect()->route('post.index');
