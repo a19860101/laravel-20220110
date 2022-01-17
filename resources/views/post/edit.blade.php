@@ -9,7 +9,7 @@
             <h2>編輯文章</h2>
         </div>
         <div class="col-8">
-            <form action="{{route('post.update',['post'=>$post->id])}}" method="post">
+            <form action="{{route('post.update',['post'=>$post->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="mb-3">

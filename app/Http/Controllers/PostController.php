@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
 use DB;
 use Redirect;
 use Str;
@@ -81,9 +82,16 @@ class PostController extends Controller
     function update(Request $request, Post $post){
         // $post->fill($request->all());
         // $post->save();
-
+        if($request->file('cover')){
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            $cover = Str::uuid().'.'.$ext;
+            $request->file('cover')->storeAs('images',$cover,'public');
+        }else{
+            $cover = null;
+        }
         $post->title = $request->title;
         $post->content = $request->content;
+        $post->cover = $cover;
         $post->save();
 
         return Redirect::route('post.show',['post' => $post->id]);
@@ -102,6 +110,8 @@ class PostController extends Controller
 
     }
     public function removeCover(Request $request,Post $post){
+        Storage::delete(asset('images/'.$post->cover));
+
         $post->cover = null;
         $post->save();
 
