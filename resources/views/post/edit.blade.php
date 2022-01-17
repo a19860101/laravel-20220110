@@ -4,7 +4,7 @@
 @endsection
 @section('main')
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-8">
             <h2>編輯文章</h2>
         </div>

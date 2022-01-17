@@ -13,7 +13,7 @@ class PostController extends Controller
     //
     function index(){
         // $posts = \App\Post::get();
-        $posts = Post::get();
+        $posts = Post::orderBy('id','DESC')->get();
         return view('post.index',compact('posts'));
     }
     function create(){

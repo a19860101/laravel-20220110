@@ -4,7 +4,7 @@
 @endsection
 @section('main')
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-8">
             <h3>{{$post->title}}</h3>
             <div>
