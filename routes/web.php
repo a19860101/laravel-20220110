@@ -32,3 +32,5 @@ Route::delete('/post/{post}','PostController@destroy')->name('post.destroy');
 
 Route::patch('post/{post}','PostController@removeCover')->name('post.removeCover');
 
+Route::resource('category','CategoryController');
+
