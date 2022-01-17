@@ -7,7 +7,7 @@
         <div class="col-8">
             <h3>{{$post->title}}</h3>
             <div>
-                {!!Str::limit($post->content,200)!!}
+                {!!Str::limit(strip_tags($post->content),200)!!}
             </div>
             <a href="{{route('post.show',['post' => $post->id])}}" class="btn btn-primary">繼續閱讀</a>
             <div>

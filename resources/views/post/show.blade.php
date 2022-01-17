@@ -8,7 +8,7 @@
         <div class="col-8">
             <h3>{{$post->title}}</h3>
             <div>
-                {{$post->content}}
+                {!!$post->content!!}
             </div>
             <div>
                 建立時間{{$post->created_at}}
