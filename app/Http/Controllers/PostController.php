@@ -110,8 +110,7 @@ class PostController extends Controller
 
     }
     public function removeCover(Request $request,Post $post){
-
-        Storage::delete(asset('images/'.$post->cover));
+        Storage::disk('public')->delete('images/'.$post->cover);
 
         $post->cover = null;
         $post->save();

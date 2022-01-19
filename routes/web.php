@@ -34,3 +34,10 @@ Route::patch('post/{post}','PostController@removeCover')->name('post.removeCover
 
 Route::resource('category','CategoryController');
 
+Route::get('test',function(){
+    // $data = Storage::disk('public')->files('images');
+    // return $data;
+    return view('test');
+});
+
+Route::get('gallery','GalleryController@index')->name('gallery.index');
