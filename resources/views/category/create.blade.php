@@ -6,7 +6,7 @@
             <h2>分類管理</h2>
             <hr>
         </div>
-        <div class="col-6">
+        <div class="col-8">
             <h3>建立分類</h3>
             <form action="{{route('category.store')}}" method="post">
                 @csrf
@@ -21,18 +21,17 @@
                 <input type="submit" value="建立分類" class="btn btn-primary">
             </form>
         </div>
-        <div class="col-6">
+        <div class="col-4">
             <h3>分類列表</h3>
             <ul class="list-group">
-                <li class="list-group-item">
-                    分類
+                @foreach ($categories as $category)
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{$category->title}}
+                    <form action="">
+                        <input type="submit" class="btn btn-danger" value="刪除">
+                    </form>
                 </li>
-                <li class="list-group-item">
-                    分類
-                </li>
-                <li class="list-group-item">
-                    分類
-                </li>
+                @endforeach
             </ul>
         </div>
     </div>

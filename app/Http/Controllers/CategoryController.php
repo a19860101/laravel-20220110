@@ -25,7 +25,8 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('category.create');
+        $categories = Category::get();
+        return view('category.create',compact('categories'));
     }
 
     /**
