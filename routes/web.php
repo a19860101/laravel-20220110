@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    return view('index');
+    return view('welcome');
+    // return view('index');
 });
 Route::get('/about',function(){
     return view('about');
@@ -41,3 +41,7 @@ Route::get('test',function(){
 });
 
 Route::get('gallery','GalleryController@index')->name('gallery.index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
