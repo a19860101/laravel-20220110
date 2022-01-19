@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use DB;
 use Redirect;
 use Str;
+use Auth;
 use App\Post;
 use App\Category;
 
@@ -66,7 +67,8 @@ class PostController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'cover' => $cover,
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
+            'user_id' => Auth::id()
         ]);
 
         // return redirect()->route('post.index');
