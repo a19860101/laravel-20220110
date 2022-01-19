@@ -80,7 +80,9 @@ class PostController extends Controller
         return view('post.show',compact('post'));
     }
     function edit(Post $post){
-        return view('post.edit',compact('post'));
+        $categories = Category::get();
+
+        return view('post.edit',compact('post','categories'));
     }
     function update(Request $request, Post $post){
         // $post->fill($request->all());
@@ -95,6 +97,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->content = $request->content;
         $post->cover = $cover;
+        $post->category_id = $request->category_id;
         $post->save();
 
         return Redirect::route('post.show',['post' => $post->id]);

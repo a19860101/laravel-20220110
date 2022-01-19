@@ -17,6 +17,17 @@
                     <input type="text" name="title" class="form-control" value="{{$post->title}}">
                 </div>
                 <div class="mb-3">
+                    <label for="" class="form-label">分類</label>
+                    <select name="category_id" id="category_id" class="form-select">
+                        @foreach ($categories as $category)
+                        <option
+                            value="{{$category->id}}"
+                            {{$post->category_id == $category->id ? 'selected':''}}
+                            >{{$category->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     @if($post->cover == null)
                     <label for="">封面圖片</label>
                     <input type="file" name="cover">
