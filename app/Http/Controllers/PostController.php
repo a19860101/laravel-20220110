@@ -9,6 +9,7 @@ use DB;
 use Redirect;
 use Str;
 use App\Post;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -19,7 +20,8 @@ class PostController extends Controller
         return view('post.index',compact('posts'));
     }
     function create(){
-        return view('post.create');
+        $categories = Category::get();
+        return view('post.create',compact('categories'));
     }
     function store(Request $request){
 
@@ -63,7 +65,8 @@ class PostController extends Controller
         Post::create([
             'title' => $request->title,
             'content' => $request->content,
-            'cover' => $cover
+            'cover' => $cover,
+            'category_id' => $request->category_id
         ]);
 
         // return redirect()->route('post.index');
