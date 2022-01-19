@@ -7,6 +7,9 @@
         <div class="col-8">
             <h3>{{$post->title}}</h3>
             <div>
+                分類:{{$post->category->title}}
+            </div>
+            <div>
                 @if($post->cover == null)
                 <img src="{{asset('images/no-image.png')}}" class='w-100'>
                 @else
