@@ -27,6 +27,12 @@ class PostController extends Controller
     }
     function store(Request $request){
 
+        // 表單驗證
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
         // 封面上傳
         // return $request->file('cover')->store('test');
         // return $request->file('cover')->store('test','public');

@@ -41,6 +41,9 @@
         </div>
     </div>
 </div>
+<div>
+{{$errors}}
+</div>
 @endsection
 @section('js')
 @include('template.tinymce')
