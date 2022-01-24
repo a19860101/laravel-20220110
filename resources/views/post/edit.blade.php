@@ -27,9 +27,16 @@
                         @endforeach
                     </select>
                 </div>
+                @php
+                    $tags = [];
+                    foreach($post->tags as $tag){
+                        $tags[] = $tag->title;
+                    }
+                    $tags = implode(',',$tags);
+                @endphp
                 <div class="mb-3">
                     <label for="" class="form-label">標籤</label>
-                    <input type="text" name="tag" class="form-control">
+                    <input type="text" name="tag" class="form-control" value="{{$tags}}">
                 </div>
                 <div class="mb-3">
                     @if($post->cover == null)
