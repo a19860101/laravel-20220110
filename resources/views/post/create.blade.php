@@ -24,6 +24,10 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="" class="form-label">標籤</label>
+                    <input type="text" name="tag" class="form-control">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">封面圖片</label>
                     <input type="file" name="cover">
                 </div>
