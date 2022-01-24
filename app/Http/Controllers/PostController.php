@@ -11,6 +11,7 @@ use Str;
 use Auth;
 use App\Post;
 use App\Category;
+use App\Tag;
 
 class PostController extends Controller
 {
@@ -70,6 +71,11 @@ class PostController extends Controller
             'category_id' => $request->category_id,
             'user_id' => Auth::id()
         ]);
+
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            Tag::firstOrCreate(['title' => $tag]);
+        }
 
         // return redirect()->route('post.index');
         return Redirect::route('post.index');
