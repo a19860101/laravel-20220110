@@ -20,12 +20,14 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('post.index')}}">首頁</a>
                 </li>
+                @auth
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('post.create')}}">建立文章</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('category.create')}}">分類管理</a>
                 </li>
+                @endauth
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
@@ -41,7 +43,7 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
 
