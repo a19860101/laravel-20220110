@@ -32,6 +32,8 @@ Route::delete('/post/{post}','PostController@destroy')->name('post.destroy')->mi
 
 Route::patch('post/{post}','PostController@removeCover')->name('post.removeCover');
 
+Route::post('/upload','PostController@upload')->name('upload');
+
 Route::resource('category','CategoryController');
 
 Route::get('test',function(){
