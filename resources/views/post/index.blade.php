@@ -11,6 +11,9 @@
                 分類:{{$post->category->title}}
             </div>
             <div>
+                作者:{{$post->user->name}}
+            </div>
+            <div>
                 @if($post->cover == null)
                 <img src="{{asset('images/no-image.png')}}" class='w-100'>
                 @else
