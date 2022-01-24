@@ -41,9 +41,15 @@
         </div>
     </div>
 </div>
-<div>
-{{$errors}}
+
+@if($errors -> any())
+@foreach($errors->all() as $e)
+<div class="alert alert-danger">
+    {{$e}}
 </div>
+@endforeach
+@endif
+
 @endsection
 @section('js')
 @include('template.tinymce')
