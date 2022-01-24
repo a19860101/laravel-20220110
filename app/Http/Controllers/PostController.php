@@ -54,9 +54,10 @@ class PostController extends Controller
         // $post->save();
 
         // 方法三
-        // $post = new Post;
-        // $post->fill($request->all());
-        // $post->save();
+        $post = new Post;
+        $post->fill($request->all());
+        $post->user_id = Auth::id();
+        $post->save();
 
         // 方法四
 
@@ -64,17 +65,18 @@ class PostController extends Controller
 
         // 方法五
 
-        Post::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'cover' => $cover,
-            'category_id' => $request->category_id,
-            'user_id' => Auth::id()
-        ]);
+        // Post::create([
+        //     'title' => $request->title,
+        //     'content' => $request->content,
+        //     'cover' => $cover,
+        //     'category_id' => $request->category_id,
+        //     'user_id' => Auth::id()
+        // ]);
 
         $tags = explode(',',$request->tag);
         foreach($tags as $tag){
-            Tag::firstOrCreate(['title' => $tag]);
+            $tagData = Tag::firstOrCreate(['title' => $tag]);
+            $post->tags()->attach($tagData -> id);
         }
 
         // return redirect()->route('post.index');
