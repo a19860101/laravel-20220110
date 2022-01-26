@@ -156,7 +156,7 @@ class PostController extends Controller
         return response()->json(['location' => '/images/'.$img]);
     }
     public function list(){
-        $posts = Post::orderBy('id','DESC')->get();
+        $posts = Post::withTrashed()->orderBy('id','DESC')->get();
         return view('post.list',compact('posts'));
     }
 }
