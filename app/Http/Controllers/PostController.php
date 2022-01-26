@@ -167,8 +167,9 @@ class PostController extends Controller
 
     }
     public function postForceDelete(Request $request){
-        // return 'force delete';
-        return $request;
+        Post::withTrashed()->find($request->id)->forceDelete();
+        return redirect()->back();
+
     }
 
 }
