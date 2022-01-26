@@ -160,6 +160,9 @@ class PostController extends Controller
         return view('post.list',compact('posts'));
     }
     public function postRestore($id){
-        return $id;
+        Post::withTrashed()->where('id',$id)->restore();
+
+        return redirect()->route('post.list');
+
     }
 }
