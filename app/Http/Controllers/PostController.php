@@ -155,4 +155,7 @@ class PostController extends Controller
 
         return response()->json(['location' => '/images/'.$img]);
     }
+    public function list(){
+        return view('post.list');
+    }
 }

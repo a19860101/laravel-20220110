@@ -30,6 +30,9 @@ Route::put('/post/{post}','PostController@update')->name('post.update')->middlew
 Route::delete('/post/{post}','PostController@destroy')->name('post.destroy')->middleware('auth');
 //delete,put/patch
 
+//文章管理
+Route::get('/admin/post','PostController@list')->name('post.list')->middleware('auth');
+
 Route::patch('post/{post}','PostController@removeCover')->name('post.removeCover');
 
 Route::post('/upload','PostController@upload')->name('upload');
