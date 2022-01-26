@@ -7,6 +7,9 @@
                 <div>
                     <h3>{{$result->title}}</h3>
                     <div>
+                        {{$result->created_at}}
+                    </div>
+                    <div>
                         {{Str::limit(strip_tags($result->content),100)}}
                     </div>
                     <hr>
