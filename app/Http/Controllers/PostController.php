@@ -159,4 +159,7 @@ class PostController extends Controller
         $posts = Post::withTrashed()->orderBy('id','DESC')->get();
         return view('post.list',compact('posts'));
     }
+    public function postRestore($id){
+        return $id;
+    }
 }

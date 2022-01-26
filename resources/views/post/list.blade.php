@@ -33,7 +33,7 @@
                             <a href="#" class="btn btn-primary btn-sm">詳細內容</a>
 
                             @if ($post->deleted_at)
-                            <a href="" class="btn btn-warning btn-sm">還原</a>
+                            <a href="{{route('post.restore',['id'=>$post->id])}}" class="btn btn-warning btn-sm">還原</a>
                             @else
                             <form action="" method="post" class="d-inline-block">
                                 <input type="submit" class="btn btn-danger btn-sm" value="刪除">
