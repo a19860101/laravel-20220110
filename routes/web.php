@@ -59,3 +59,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 // 搜尋
 
 Route::get('/search','SearchController@index')->name('search');
+Route::get('/search/result','SearchController@searchResult')->name('search.result');
