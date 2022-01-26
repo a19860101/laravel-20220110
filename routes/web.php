@@ -53,3 +53,8 @@ Route::get('gallery','GalleryController@index')->name('gallery.index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// 搜尋
+
+Route::get('/search','SearchController@index')->name('search');
