@@ -136,7 +136,8 @@ class PostController extends Controller
         Post::destroy($post->id);
 
 
-        return Redirect::route('post.index');
+        // return Redirect::route('post.index');
+        return redirect()->back();
 
     }
     public function removeCover(Request $request,Post $post){
@@ -165,4 +166,5 @@ class PostController extends Controller
         return redirect()->route('post.list');
 
     }
+
 }
