@@ -166,5 +166,9 @@ class PostController extends Controller
         return redirect()->route('post.list');
 
     }
+    public function postForceDelete(Request $request){
+        // return 'force delete';
+        return $request;
+    }
 
 }

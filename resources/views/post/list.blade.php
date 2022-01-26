@@ -30,8 +30,9 @@
                         <td>{{$post->created_at}}</td>
                         <td>{{$post->updated_at}}</td>
                         <td>
-                            <form action="" method="post" class="d-inline-block">
+                            <form action="{{route('post.forceDelete')}}" method="post" class="d-inline-block">
                                 @csrf
+                                @method('delete')
                                 <input type="submit" class="btn btn-outline-danger btn-sm" value="永久刪除">
                             </form>
 

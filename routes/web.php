@@ -34,7 +34,8 @@ Route::delete('/post/{post}','PostController@destroy')->name('post.destroy')->mi
 Route::get('/admin/post','PostController@list')->name('post.list')->middleware('auth');
 //文章還原
 Route::get('admin/postRestore/{id}','PostController@postRestore')->name('post.restore')->middleware('auth');
-
+//清空文章
+Route::delete('admin/postForceDelete','PostController@postForceDelete')->name('post.forceDelete')->middleware('auth');
 
 Route::patch('post/{post}','PostController@removeCover')->name('post.removeCover');
 
