@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <a href="#" class="btn btn-primary">新增商品</a>
+            <a href="{{route('product.create')}}" class="btn btn-primary">新增商品</a>
         </div>
         <div class="col-12">
             <table class="table">
