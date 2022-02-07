@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->integer('price');
             $table->integer('sale');
-            $table->date('up-date');
-            $table->date('down-date');
+            $table->date('up_date');
+            $table->date('down_date');
             $table->timestamps();
         });
     }

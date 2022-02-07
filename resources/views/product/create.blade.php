@@ -6,14 +6,15 @@
         <div class="col-lg-8 col-sm-10">
             <h2>新增商品</h2>
             <hr>
-            <form action="">
+            <form action="{{route('product.store')}}" method="post">
+                @csrf
                 <div class="mb-3">
                     <label for="">商品名稱</label>
                     <input type="text" name="title" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="">商品敘述</label>
-                    <textarea name="decription" id="" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="">售價</label>
