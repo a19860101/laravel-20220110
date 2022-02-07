@@ -6,9 +6,9 @@
         <div class="col-lg-8 col-sm-10">
             <h2>編輯商品</h2>
             <hr>
-            <form action="{{route('product.edit',['product'=>$product->id])}}" method="post">
+            <form action="{{route('product.update',['product'=>$product->id])}}" method="post">
                 @csrf
-                @method('update')
+                @method('put')
                 <div class="mb-3">
                     <label for="">商品名稱</label>
                     <input type="text" name="title" class="form-control" value="{{$product->title}}">
