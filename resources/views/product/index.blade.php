@@ -13,6 +13,7 @@
                     <th>商品名稱</th>
                     <th>售價</th>
                     <th>特價</th>
+                    <th>上/下架</th>
                     <th>動作</th>
                 </tr>
                 @foreach ($products as $product)
@@ -21,6 +22,13 @@
                     <td>{{$product->title}}</td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->sale}}</td>
+                    <td>
+                        @if($product->up_date < today() && $product->down_date > today())
+                        <span class="text-primary">已上架</span>
+                        @else
+                        <span class="text-danger">已下架</span>
+                        @endif
+                    </td>
                     <td>
                         <a href="#" class="btn btn-success">編輯商品資訊</a>
                         <form action="" method="post" class="d-inline-block">
