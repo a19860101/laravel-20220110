@@ -30,7 +30,7 @@
                         @endif
                     </td>
                     <td>
-                        <a href="#" class="btn btn-success">編輯商品資訊</a>
+                        <a href="{{route('product.edit',['product'=>$product->id])}}" class="btn btn-success">編輯商品資訊</a>
                         <form action="" method="post" class="d-inline-block">
                             @csrf
                             @method('delete')
