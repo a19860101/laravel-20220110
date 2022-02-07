@@ -60,3 +60,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/search','SearchController@index')->name('search');
 Route::get('/search/result','SearchController@searchResult')->name('search.result');
+
+//商品
+
+Route::resource('admin/product','ProductController');
