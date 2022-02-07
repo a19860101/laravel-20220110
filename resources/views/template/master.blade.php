@@ -35,7 +35,7 @@
                 </li>
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link" href="#">所有商品</a>
+                    <a class="nav-link" href="{{route('product.list')}}">所有商品</a>
                 </li>
             </ul>
             <!-- Right Side Of Navbar -->

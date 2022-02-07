@@ -64,4 +64,4 @@ Route::get('/search/result','SearchController@searchResult')->name('search.resul
 //商品
 
 Route::resource('admin/product','ProductController');
-Route::get('product','ProductController@list');
+Route::get('product','ProductController@list')->name('product.list');
