@@ -6,11 +6,15 @@
         <div class="col-lg-8 col-sm-10">
             <h2>新增商品</h2>
             <hr>
-            <form action="{{route('product.store')}}" method="post">
+            <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="">商品名稱</label>
                     <input type="text" name="title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="">商品圖片</label>
+                    <input type="file" name="cover">
                 </div>
                 <div class="mb-3">
                     <label for="">商品敘述</label>
