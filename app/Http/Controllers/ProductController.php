@@ -121,7 +121,6 @@ class ProductController extends Controller
         return view('product.detail',compact('product'));
     }
     public function removeCover(Request $request,Product $product){
-
         Storage::disk('public')->delete('images/'.$product->cover);
 
         $product->cover = null;

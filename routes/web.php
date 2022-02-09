@@ -66,4 +66,6 @@ Route::get('/search/result','SearchController@searchResult')->name('search.resul
 Route::resource('admin/product','ProductController');
 Route::get('product','ProductController@list')->name('product.list');
 Route::get('product/{product}','ProductController@detail')->name('product.detail');
-Route::patch('product/{product}/cover','ProductController@removeCover')->name('product.removeCover');
+Route::get('product/remove/{product}','ProductController@removeCover')->name('product.removeCover');
+
+

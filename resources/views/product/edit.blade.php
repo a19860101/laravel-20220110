@@ -19,11 +19,7 @@
                     <input type="file" name="cover">
                     @else
                     <img src="{{asset('images/'.$product->cover)}}" width="200">
-                    <form action="{{route('product.removeCover',['product'=>$product->id])}}" method="post">
-                        @csrf
-                        @method('patch')
-                        <input type="submit" value="刪除圖片" class="btn btn-danger">
-                    </form>
+                    <a href="{{route('product.removeCover',['product'=>$product->id])}}" class="btn btn-danger">刪除圖片</a>
                     @endif
                 </div>
                 <div class="mb-3">
