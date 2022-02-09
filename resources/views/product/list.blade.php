@@ -14,9 +14,10 @@
     <div class="row align-items-stretch g-3">
         @foreach ($products as $product)
         <div class="col-xl-3 col-md-4 col-6 product-item">
-            <a href="#" class="text-dark text-decoration-none d-block border h-100 shadow-sm product-content">
+            <a href="{{route('product.detail',['product'=>$product->id])}}" class="text-dark text-decoration-none d-block border h-100 shadow-sm product-content">
                 <div>
-                    <img src="https://picsum.photos/id/45/800/600" class="w-100">
+                    {{-- <img src="https://picsum.photos/id/45/800/600" class="w-100"> --}}
+                    <img src="{{asset('images/'.$product->cover)}}" alt="" class="w-100">
                 </div>
                 <div class="p-3">
                     <h4>

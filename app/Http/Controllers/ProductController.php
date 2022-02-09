@@ -115,4 +115,7 @@ class ProductController extends Controller
         $products = Product::orderBy('id','DESC')->get();
         return view('product.list',compact('products'));
     }
+    public function detail(Product $product){
+        return $product;
+    }
 }
