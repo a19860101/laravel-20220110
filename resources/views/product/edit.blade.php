@@ -14,6 +14,19 @@
                     <input type="text" name="title" class="form-control" value="{{$product->title}}">
                 </div>
                 <div class="mb-3">
+                    @if($product->cover == null)
+                    <label for="">封面圖片</label>
+                    <input type="file" name="cover">
+                    @else
+                    <img src="{{asset('images/'.$product->cover)}}" width="200">
+                    {{-- <form action="" method="post">
+                        @csrf
+                        @method('patch')
+                        <input type="submit" value="刪除圖片" class="btn btn-danger">
+                    </form> --}}
+                    @endif
+                </div>
+                <div class="mb-3">
                     <label for="">商品敘述</label>
                     <textarea name="description" id="" cols="30" rows="10" class="form-control">{{$product->description}}</textarea>
                 </div>
