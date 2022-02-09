@@ -8,6 +8,10 @@ use Auth;
 class CartController extends Controller
 {
     //
+    public function cartList(){
+        $carts = Cart::all();
+        return view('cart.list',compact('carts'));
+    }
     public function addToCart(Request $request){
         $cart = new Cart;
         $cart->product_id = $request->product_id;

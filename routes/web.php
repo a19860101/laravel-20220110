@@ -71,5 +71,6 @@ Route::get('product/remove/{product}','ProductController@removeCover')->name('pr
 //購物車
 
 Route::post('cart','CartController@addToCart')->name('cart.addToCart');
+Route::get('cart','CartController@cartList')->name('cart.cartList');
 
 
