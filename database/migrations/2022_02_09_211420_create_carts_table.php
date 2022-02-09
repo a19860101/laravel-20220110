@@ -18,6 +18,9 @@ class CreateCartsTable extends Migration
             $table->unsignedBigInteger('product_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -28,6 +31,10 @@ class CreateCartsTable extends Migration
      */
     public function down()
     {
+        Schema::table('carts',function(Blueprint $table){
+            $table->dropForeign(['product_id']);
+            $table->dropForeign(['user_id']);
+        });
         Schema::dropIfExists('carts');
     }
 }
