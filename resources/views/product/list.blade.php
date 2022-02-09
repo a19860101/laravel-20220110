@@ -32,6 +32,11 @@
                         @else
                         售價 ${{$product->price}}
                         @endif
+                        <form action="{{route('cart.addToCart')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{$product->id}}">
+                            <input type="submit" value="加入購物車" class="btn btn-warning">
+                        </form>
                     </div>
                 </div>
             </a>
