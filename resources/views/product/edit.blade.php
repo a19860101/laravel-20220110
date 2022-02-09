@@ -6,7 +6,7 @@
         <div class="col-lg-8 col-sm-10">
             <h2>編輯商品</h2>
             <hr>
-            <form action="{{route('product.update',['product'=>$product->id])}}" method="post">
+            <form action="{{route('product.update',['product'=>$product->id])}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="mb-3">
@@ -19,11 +19,11 @@
                     <input type="file" name="cover">
                     @else
                     <img src="{{asset('images/'.$product->cover)}}" width="200">
-                    {{-- <form action="" method="post">
+                    <form action="{{route('product.removeCover',['product'=>$product->id])}}" method="post">
                         @csrf
                         @method('patch')
                         <input type="submit" value="刪除圖片" class="btn btn-danger">
-                    </form> --}}
+                    </form>
                     @endif
                 </div>
                 <div class="mb-3">

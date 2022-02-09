@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 use Str;
 
@@ -117,5 +119,13 @@ class ProductController extends Controller
     }
     public function detail(Product $product){
         return view('product.detail',compact('product'));
+    }
+    public function removeCover(Request $request,Product $product){
+
+        Storage::disk('public')->delete('images/'.$product->cover);
+
+        $product->cover = null;
+        $product->save();
+        return redirect()->back();
     }
 }
