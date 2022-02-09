@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 
+use Str;
+
 class ProductController extends Controller
 {
     /**
@@ -39,7 +41,19 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
-        Product::create($request->all());
+        // Product::create($request->all());
+
+        if($request->file('cover')){
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            $cover = Str::uuid().'.'.$ext;
+            $request->file('cover')->storeAs('images',$cover,'public');
+        }else{
+            $cover = null;
+        }
+        $product = new Product;
+        $product->fill($request->all());
+        $product->cover = $cover;
+        $product->save();
 
         return redirect()->route('product.index');
     }
