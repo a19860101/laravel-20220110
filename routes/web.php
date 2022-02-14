@@ -73,5 +73,6 @@ Route::get('product/remove/{product}','ProductController@removeCover')->name('pr
 Route::post('cart','CartController@addToCart')->name('cart.addToCart');
 Route::get('cart','CartController@cartList')->name('cart.cartList');
 Route::delete('cart/{cart}','CartController@deleteCart')->name('cart.deleteCart');
+Route::post('cart/remove','CartController@removeCart')->name('cart.removeCart');
 
 

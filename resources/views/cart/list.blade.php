@@ -22,9 +22,18 @@
                     @method('delete')
                     <input type="submit" value="移除" class="btn btn-danger btn-sm" onclick="return confirm('確認刪除？')">
                 </form>
+
             </div>
         </div>
         @endforeach
+        @if(count($carts) !=0)
+        <div class="col-10">
+            <form action="{{route('cart.removeCart')}}" method="post">
+                @csrf
+                <input type="submit" value="清空購物車" class="btn btn-danger btn-sm" onclick="return confirm('確認清空')">
+            </form>
+        </div>
+        @endif
     </div>
 </div>
 
