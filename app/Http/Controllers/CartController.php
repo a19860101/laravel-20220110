@@ -9,7 +9,7 @@ class CartController extends Controller
 {
     //
     public function cartList(){
-        $carts = Cart::all();
+        $carts = Cart::where('user_id',Auth::id())->get();
         return view('cart.list',compact('carts'));
     }
     public function addToCart(Request $request){
