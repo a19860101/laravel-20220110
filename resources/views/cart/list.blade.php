@@ -36,6 +36,10 @@
         <div class="col-10 text-end">
             <hr>
             總金額:${{$total}}
+            <br>
+            <form action="" method="post">
+                <input type="submit" value="結帳" class='btn btn-primary'>
+            </form>
         </div>
         @if(count($carts) !=0)
         <div class="col-10">
