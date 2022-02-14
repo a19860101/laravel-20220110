@@ -20,4 +20,7 @@ class CartController extends Controller
         $cart->save();
         return redirect()->back();
     }
+    public function deleteCart(Cart $cart){
+        return $cart;
+    }
 }

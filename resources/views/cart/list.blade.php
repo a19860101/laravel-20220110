@@ -9,7 +9,12 @@
             <div class="content p-3 d-flex align-items-center">
                 <img src="{{asset('images/'.$cart->product->cover)}}" width="150">
                 <div class="ms-3">{{$cart->product->title}}</div>
-                <div class="ms-auto">{{$cart->product->price}}</div>
+                <div class="ms-auto me-3">{{$cart->product->price}}</div>
+                <form action="{{route('cart.deleteCart',['cart'=>$cart->id])}}" method="post">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="移除" class="btn btn-danger btn-sm" onclick="return confirm('確認刪除？')">
+                </form>
             </div>
         </div>
         @endforeach
