@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     //
-    public function products(){
-        return $this->belongsToMany('App\Product');
+    public function product(){
+        return $this->belongsTo('App\Product');
     }
 }
