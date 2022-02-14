@@ -16,7 +16,14 @@
             <div class="content p-3 d-flex align-items-center">
                 <img src="{{asset('images/'.$cart->product->cover)}}" width="150">
                 <div class="ms-3">{{$cart->product->title}}</div>
-                <div class="ms-auto me-3">{{$cart->product->price}}</div>
+                <div class="ms-auto me-3">
+                    @if($cart->product->sale)
+                        <del class="text-secondary">{{$cart->product->price}}</del>
+                        <span class="text-primary"> ${{$cart->product->sale}}</span>
+                        @else
+                        售價 ${{$product->price}}
+                    @endif
+                </div>
                 <form action="{{route('cart.deleteCart',['cart'=>$cart->id])}}" method="post">
                     @csrf
                     @method('delete')
@@ -26,6 +33,10 @@
             </div>
         </div>
         @endforeach
+        <div class="col-10 text-end">
+            <hr>
+            總金額:${{$total}}
+        </div>
         @if(count($carts) !=0)
         <div class="col-10">
             <form action="{{route('cart.removeCart')}}" method="post">
