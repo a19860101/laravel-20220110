@@ -42,6 +42,9 @@
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
                 <li class="nav-item">
+                    <a href="{{route('cart.cartList')}}" class="nav-link">購物車</a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('search')}}" class="nav-link">搜尋文章</a>
                 </li>
                 @guest
