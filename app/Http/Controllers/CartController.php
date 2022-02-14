@@ -21,6 +21,7 @@ class CartController extends Controller
         return redirect()->back();
     }
     public function deleteCart(Cart $cart){
-        return $cart;
+        $cart->delete();
+        return redirect()->back();
     }
 }

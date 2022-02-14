@@ -1,9 +1,16 @@
 @extends('template.master')
 
 @section('main')
-<h1>購物車</h1>
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-10 pb-3">
+            <h1>購物車</h1>
+            <div>
+                {{count($carts) == 0 ? '目前沒有商品':'共有'.count($carts).'件商品'}}
+            </div>
+
+            <hr>
+        </div>
         @foreach($carts as $cart)
         <div class="col-10 border border-dark mb-4 rounded">
             <div class="content p-3 d-flex align-items-center">
